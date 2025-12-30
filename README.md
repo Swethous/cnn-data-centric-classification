@@ -11,7 +11,7 @@ CNNが「何を学習し」「どこを見て判断しているか」まで検�
 ---
 
 ## 📊 Final Result at a Glance
-> **Best Performance:** Data Augmentation + Transfer Learning
+> **Best Performance:** Transfer Learning (No Aug)
 
 ![Final Accuracy](results/notebook5_final/final_accuracy_comparison.png)
 
@@ -162,17 +162,31 @@ Transfer Learningは少量データ環境において、
 ### 🔹 最終Accuracy比較
 ![Final Accuracy](results/notebook5_final/final_accuracy_comparison.png)
 
-📌 **Data Augmentation + Transfer Learning** の組み合わせが  
-最も安定かつ高い性能を示した。
+📌 **Data Augmentation (No Augmentation)** モデルは、
+全実験の中で最も高い Validation Accuracy を記録した。
+これは、事前学習された特徴抽出器が
+CIFAR-10 のような小規模データセットにおいても、
+すでに十分な汎化性能を提供していることを示している。
+
+また、Data Augmentation は Baseline CNN においては
+性能向上に寄与した一方で、
+Transfer Learning 環境では追加的な精度向上よりも、
+学習の安定性に対する効果が主に観察された。
 
 ---
 
 # ✅ 最終結論
-- 少量データ環境では  
-  **モデル複雑化よりもデータ戦略が重要**
-- Data AugmentationはCNNの汎化性能を大きく向上させる
-- Feature MapおよびGrad-CAMにより学習根拠を検証できた
-- Transfer Learningは実務的に最も効果的な拡張戦略である
+- 小規模データセットにおいては、
+  モデル構造の複雑化よりも
+  事前学習された表現（Transfer Learning）が性能に与える影響が大きい
+- Data Augmentation は、単純な CNN の汎化性能を効果的に向上させる
+- 一方で、強力な事前学習モデルでは、Augmentation が必須とは限らず、
+  場合によっては性能差が小さいこともある
+- Feature Map および Grad-CAM の分析を通じて、
+  モデルが物体の意味的に重要な領域を基に
+  判断していることを確認した
+- Transfer Learning は、性能と計算効率の両面において、
+  実務環境で最も現実的な画像分類戦略であることを検証した
 
 ---
 
