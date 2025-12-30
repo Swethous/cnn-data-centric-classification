@@ -13,7 +13,7 @@ CNN이 무엇을 학습했고 어디를 보고 판단하는지까지 검증한
 ## 📊 Final Result at a Glance
 > **Best Performance:** Data Augmentation + Transfer Learning
 
-![Final Accuracy](results/notebook5_final/final_accuracy_comparison.png)
+![Final Accuracy](results/notebook5_final/validation_accuracy_over_epochs.png)
 
 ---
 
@@ -22,7 +22,7 @@ CNN이 무엇을 학습했고 어디를 보고 판단하는지까지 검증한
 
 소량의 이미지 데이터에서는 CNN이 특정 패턴을 암기(overfitting)하여  
 **일반화 성능이 떨어지는 문제**가 발생한다.  
-본 프로젝트는 **모델을 무작정 복잡하게 만들기 전에**,  
+본 프로젝트는 **모델을 복잡하게 만들기 전에**,  
 **데이터 중심(Data-centric) 접근**을 통해 이 문제를 해결하는 것을 목표로 한다.
 
 ---
